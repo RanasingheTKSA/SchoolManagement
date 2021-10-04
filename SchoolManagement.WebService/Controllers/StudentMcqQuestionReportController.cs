@@ -40,6 +40,7 @@ namespace SchoolManagement.WebService.Controllers
                 {
                     StudentId = studentReportViewModel.StudentId,
                     StudentName =studentReportViewModel.Student.User.FullName,
+                    TeacherComments = studentReportViewModel.TeacherComments,
                     Marks = studentReportViewModel.Marks
                 };
                 response.Add(vm);

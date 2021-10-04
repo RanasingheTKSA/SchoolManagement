@@ -10,6 +10,7 @@ namespace SchoolManagement.ViewModel.Report
     {
         public int StudentId { get; set; }
         public string StudentName { get; set; }
+        public string TeacherComments { get; set; }
         public decimal Marks { get; set; }
 
     }

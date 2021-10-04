@@ -53,5 +53,20 @@ export class StudentMcqQuestionAnswerService {
         .set('studentNameId', studentNameId.toString())
     });
   }
+
+  getStudents(): Observable<StudentMcqQuestionAnswerModel[]>{
+    return this.httpClient.
+      get<StudentMcqQuestionAnswerModel[]>
+      (environment.apiUrl + 'StudentMCQQuestion/getStudents');
+  }
+
+  /* report(id: number): Observable <ResponseModel> { 
+    return this.httpClient. 
+    report<ResponseModel>(environment.apiUrl + 'StudentMCQQuestion/report' + id); 
+  } */
   
+  report() {
+    return this.httpClient.get(`${environment.apiUrl} + StudentMCQQuestion/report`, {});
+}
+
 }

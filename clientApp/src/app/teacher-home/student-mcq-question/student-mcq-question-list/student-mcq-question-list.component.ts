@@ -49,6 +49,8 @@ g
     this.getAllQuestions();
     this.getAllStudentNames();
     this.getAllStudentAnswerTexts();
+    this.getStudents();
+    this.report();
 
     this.studentMcqQuestionFilterForm = this.createStudentNameFilterForm();
   }
@@ -218,5 +220,49 @@ g
     });
   }
 
+
+
+
+
+
+
+  getStudents(){
+    this.loadingIndicator = true;
+    this.StudentMcqQuestionAnswerService.getStudents().subscribe(response => {
+      this.data=response;
+      this.loadingIndicator = false;
+
+    }, error =>{
+      this.loadingIndicator = false;
+      this.toastr.error("Get student report method is not working!, Please try again", "Error")
+    })
+   }
+
+  //download report method
+  report() {
+    Swal.fire({
+         title: 'Are you sure want to Download MCQ Report?',
+         showCancelButton: true,
+         confirmButtonColor: 'red',
+         cancelButtonColor: 'green',
+         confirmButtonText: 'Yes',
+       }).then((result) => {
+         if (result.value) {
+           this.StudentMcqQuestionAnswerService.report().subscribe(response=>{
+
+             if(response.isSuccess){
+               this.toastr.success(response.message,"Success");
+               this.getStudents();
+             }
+             else{
+               this.toastr.error(response.message,"Error");
+             }
+     
+         },error=>{
+             this.toastr.error("Network error has been occured. Please try again.","Error");
+           }); 
+         }
+       });
+   }
 
 }
