@@ -107,10 +107,6 @@
                 (page)="setPage($event)"
                 >
   
-              <!-- <ngx-datatable #table class="material" [rows]="data" [loadingIndicator]="loadingIndicator"
-                  columnMode="force" [headerHeight]="60" [footerHeight]="80" rowHeight="auto" [limit]="10"
-                  [scrollbarH]="scrollBarHorizontal" [reorderable]="reorderable"> -->
-
                   <ngx-datatable-column [width]="100" name="Actions" sortable="false">
                     <ng-template let-value="value" let-row="row" let-rowIndex="rowIndex" ngx-datatable-cell-template>
                       <span>

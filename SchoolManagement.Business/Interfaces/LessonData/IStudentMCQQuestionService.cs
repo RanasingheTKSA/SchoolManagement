@@ -20,5 +20,6 @@ namespace SchoolManagement.Business.Interfaces.LessonData
         List<DropDownViewModel> GetAllStudentNames();
 
         PaginatedItemsViewModel<BasicStudentMCQQuestionViewModel> GetStudentNameList(string searchText, int currentPage, int pageSize, int studentNameId);
+        DownloadFileModel downloadStudentListReport();
     }
 }

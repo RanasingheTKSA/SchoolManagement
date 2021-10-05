@@ -72,11 +72,11 @@
                                   <i class="material-icons">add</i>
                                   </button>
 
-                                  <!-- <button 
+                                  <button 
                                     class="btn btn-icon icon-left btn-success ms-3" 
-                                    (click)='clickReport(addEditReport)'>
+                                    >
                                     <i class="far fa-download"> DOWNLOAD REPORTS </i>
-                                  </button> -->
+                                  </button> 
 
                                 </div>
                               </div>
@@ -113,10 +113,6 @@
                 [reorderable]="reorderable"
                 (page)="setPage($event)"
                 > 
-
-            <!-- <ngx-datatable #table class="material" [rows]="data" [loadingIndicator]="loadingIndicator"
-                columnMode="force" [headerHeight]="60" [footerHeight]="80" rowHeight="auto" [limit]="10"
-                [scrollbarH]="scrollBarHorizontal" [reorderable]="reorderable"> -->
 
                 <ngx-datatable-column [width]="100" name="Actions" sortable="false">
                   <ng-template let-value="value" let-row="row" let-rowIndex="rowIndex" ngx-datatable-cell-template>
@@ -217,7 +213,7 @@
                               
                   <!-- this is a row two -->
                   <!-- <div class="row"> -->
-                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
+                    <!-- <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
                       <div class="form-group">
                         <label>Student Answer Text<span class="text-danger">*</span></label>
                         <select 
@@ -227,7 +223,7 @@
                           <option *ngFor="let item of studentAnswerTexts" [ngValue]="item.id">{{item.name}}</option>
                         </select>
                       </div>
-                    </div> 
+                    </div>  -->
                     
                     <div class="row">
                     <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">

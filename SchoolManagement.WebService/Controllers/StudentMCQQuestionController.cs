@@ -7,6 +7,7 @@ using SchoolManagement.ViewModel.Lesson;
 using SchoolManagement.WebService.Infrastructure.Services;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -74,5 +75,18 @@ namespace SchoolManagement.WebService.Controllers
 
             return response;
         }
+
+        [HttpGet]
+        [RequestSizeLimit(long.MaxValue)]
+        [Route("downloadStudentListReport")]
+        public FileStreamResult downloadUserListReport()
+        {
+            var response = studentmcqquestionService.downloadStudentListReport();
+
+            return File(new MemoryStream(response.FileData), "application/pdf", response.FileName);
+        }
+
+
+
     }
 }

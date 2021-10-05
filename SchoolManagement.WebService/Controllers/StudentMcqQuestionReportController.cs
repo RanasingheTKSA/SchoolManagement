@@ -38,7 +38,7 @@ namespace SchoolManagement.WebService.Controllers
             {
                 StudentReportViewModel vm = new StudentReportViewModel()
                 {
-                    //StudentId = studentReportViewModel.StudentId,
+                    StudentId = studentReportViewModel.StudentId,
                     StudentName =studentReportViewModel.Student.User.FullName,
                     TeacherComments = studentReportViewModel.TeacherComments,
                     Marks = studentReportViewModel.Marks
@@ -53,11 +53,9 @@ namespace SchoolManagement.WebService.Controllers
         [Route("report")]
         public ActionResult Report(StudentReportViewModel studentReportViewModel)
         {
-
             StudentReport studentReport = new StudentReport();
             byte[] abytes = studentReport.PrepareReport(GetStudents());
             return File(abytes, "application/pdf");
-
         }
 
     }

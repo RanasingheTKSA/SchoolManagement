@@ -44,7 +44,7 @@ export class McqQuestionAnswerListComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    //this.getAll();
+    this.getAll();
     this.getAllQuestions();
     //this.getQuestionList();
     this.questionStudentAnswerFilterForm = this.createQuestionFilterForm();
@@ -143,10 +143,11 @@ get searchTextFilterId() {
   createNewMCQQuestionAnswer(content)
   {
     this.mcqQuestionAnswerForm = this.fb.group({
-      
+      id : [0],
       questionId : [null, [Validators.required]],
       answerText : ['', [Validators.required]],
-      isCorrectAnswer : ['', [Validators.required]],
+      //isCorrectAnswer : ['', [Validators.required]],
+      //isCorrectAnswer : [1],
       
     });
 
@@ -165,7 +166,8 @@ get searchTextFilterId() {
       id:[row.id],
       questionId : [row.questionId, [Validators.required]],
       answerText : [row.answerText, [Validators.required]],
-      isCorrectAnswer : [row.isCorrectAnswer, [Validators.required]],
+      //isCorrectAnswer : [row.isCorrectAnswer, [Validators.required]],
+      //isCorrectAnswer : [1],
     });
 
     this.modalService.open(content, {
@@ -176,10 +178,9 @@ get searchTextFilterId() {
 
 
   //save MCQ Student Answer button 
-  saveMCQQuestionAnswer()
+  saveMcqQuestionAnswer()
   {
     console.log(this.mcqQuestionAnswerForm.value);
-
     this.McqQuestionAnswerService.saveMCQQuestionAnswer(this.mcqQuestionAnswerForm.value)
       .subscribe(response=>{
         
@@ -187,7 +188,8 @@ get searchTextFilterId() {
         {
             this.modalService.dismissAll();
             this.toastr.success(response.message,"Success");
-            this.getAll();
+            this.getQuestionList();
+  
         }
          else
         {

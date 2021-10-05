@@ -124,7 +124,7 @@
                 </ngx-datatable-column>
 
               <!-- Answer Id -->
-              <ngx-datatable-column name="Question" [width]="100">
+              <ngx-datatable-column name="Question" [width]="200">
                 <ng-template let-row="row" ngx-datatable-cell-template>
                   {{row.questionName}}
                 </ng-template>
@@ -132,18 +132,18 @@
 
               
               <!-- Answer Text -->
-              <ngx-datatable-column name="Answer Text" [width]="400">
+              <ngx-datatable-column name="Answer Text" [width]="200">
                 <ng-template let-row="row" ngx-datatable-cell-template>
                   {{row.answerText}}
                 </ng-template>
               </ngx-datatable-column>
 
               <!-- Is Correct Answer -->
-              <ngx-datatable-column name="Is Correct Answer" [width]="50">
+              <!-- <ngx-datatable-column name="Is Correct Answer" [width]="50">
                 <ng-template let-row="row" ngx-datatable-cell-template>
                   {{row.isCorrectAnswer}}
                 </ng-template>
-              </ngx-datatable-column>
+              </ngx-datatable-column> -->
 
               <!-- Created On -->
               <ngx-datatable-column name="Created On" [width]="50">
@@ -176,9 +176,6 @@
               </button>
             </div>
 
-
-
-
             <div class="modal-body">
               <form class="register-form" 
               [formGroup]="mcqQuestionAnswerForm">
@@ -210,13 +207,13 @@
                   </div> 
               </div>
 
-              <div class="row">
+              <!-- <div class="row">
                 <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
                   <label> Is Correct Answer <span class="text-danger">*</span></label>
                       <input 
                           type="text" 
                           class="form-control" 
-                          placeholder="Type is cirrect answer or not" 
+                          placeholder="Type is correct answer or not (True/False)" 
                           formControlName="isCorrectAnswer"
                           required>
                     <small class="form-text text-danger"
@@ -224,10 +221,26 @@
                       Is correct or not required
                     </small>
                 </div>
-              </div>            
+              </div> --> 
+              
+              <!-- <div class="row">
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
+                  <label> Is Correct Answer <span class="text-danger">*</span></label><br><br>
+                    <input 
+                      type="radio" 
+                      [value]=1 
+                      name="isCorrectAnswer" 
+                      checked
+                      required > TRUE <br>
+                    <input 
+                      type="radio" 
+                      [value]=2 
+                      name="isCorrectAnswer"> FALSE
+                </div>
+              </div> -->
                
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-primary" (click)="saveMCQQuestionAnswer()" [disabled]="!mcqQuestionAnswerForm.valid">Save</button>
+                  <button type="button" class="btn btn-primary" (click)="saveMcqQuestionAnswer()" [disabled]="!mcqQuestionAnswerForm.valid">Save</button>
                   <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
                 </div>
               </form>

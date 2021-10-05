@@ -44,7 +44,7 @@ namespace SchoolManagement.Business
                     QuestionName = item.Question.QuestionText,
                     AnswerText = item.AnswerText,
                     SequenceNo = item.SequenceNo,
-                    IsCorrectAnswer = item.IsCorrectAnswer,
+                    //IsCorrectAnswer = item.IsCorrectAnswer,
                     ModifiedDate = DateTime.UtcNow,
                     CreatedOn = DateTime.UtcNow
                 };
@@ -70,7 +70,7 @@ namespace SchoolManagement.Business
                         QuestionId = vm.QuestionId,
                         AnswerText = vm.AnswerText,
                         //SequenceNo = vm.SequenceNo,
-                        IsCorrectAnswer = vm.IsCorrectAnswer,
+                        //IsCorrectAnswer = vm.IsCorrectAnswer,
                         ModifiedDate = DateTime.UtcNow,
                         CreatedOn = DateTime.UtcNow
                     };
@@ -84,7 +84,7 @@ namespace SchoolManagement.Business
                 {
                     MCQQuestionAnswers.AnswerText = vm.AnswerText;
                     //MCQQuestionAnswers.SequenceNo = vm.SequenceNo;
-                    MCQQuestionAnswers.IsCorrectAnswer = vm.IsCorrectAnswer;
+                    //MCQQuestionAnswers.IsCorrectAnswer = vm.IsCorrectAnswer;
                     MCQQuestionAnswers.ModifiedDate = vm.ModifiedDate;
                     //MCQQuestionAnswers.CreatedOn = vm.CreatedOn;
 

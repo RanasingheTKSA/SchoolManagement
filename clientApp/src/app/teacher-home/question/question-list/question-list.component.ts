@@ -43,6 +43,7 @@ export class QuestionListComponent implements OnInit {
 
 
     ngOnInit(): void {
+      //this.getAll();
       this.getAllTopic();
       this.questionFilterForm = this.createQuestionFilterForm();
       
@@ -202,7 +203,7 @@ export class QuestionListComponent implements OnInit {
       return this.questionFilterForm.get("searchText").value;
     } 
       //save Question button 
-      saveQuestion()
+    saveQuestion()
       {
         console.log(this.questionForm.value);
 
@@ -213,7 +214,7 @@ export class QuestionListComponent implements OnInit {
             {
                 this.modalService.dismissAll();
                 this.toastr.success(response.message,"Success");
-                this.getAll();
+                this.getLessonList();
             }
              else
             {

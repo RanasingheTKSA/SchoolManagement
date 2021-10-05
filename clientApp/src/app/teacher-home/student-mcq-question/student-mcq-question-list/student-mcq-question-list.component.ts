@@ -185,30 +185,6 @@ g
     });
   }
 
-
-
-  //report from
-  /* clickReport(content)
-  {
-    this.ReportForm = this.fb.group({
-      //studentId:[null, [Validators.required]],
-      studentName:[null, [Validators.required]],
-      teacherComments:['', [Validators.required]],
-      marks:['', [Validators.required]],
-    });
-
-    this.modalService.open(content, {
-      ariaLabelledBy: 'modal-basic-title',
-      size: 'lg',
-    });
-  } */
-
-
-
-
-
-
-
   //save Question button 
   saveStudentMCQQuestion()
   {
@@ -247,6 +223,27 @@ g
   }
 
 
+
+
+
+
+
+  
+  //report from
+  /* clickReport(content)
+  {
+    this.ReportForm = this.fb.group({
+      //studentId:[null, [Validators.required]],
+      studentName:[null, [Validators.required]],
+      teacherComments:['', [Validators.required]],
+      marks:['', [Validators.required]],
+    });
+
+    this.modalService.open(content, {
+      ariaLabelledBy: 'modal-basic-title',
+      size: 'lg',
+    });
+  } */
 
 
 

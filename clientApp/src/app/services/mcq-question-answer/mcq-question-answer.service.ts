@@ -1,5 +1,5 @@
-import { MCQQuestionAnswerPaginatedItemsViewModel } from './../../models/mcq-question-answer/mcqquestionanswer.paginated.item';
 import { environment } from 'src/environments/environment';
+import { MCQQuestionAnswerPaginatedItemsViewModel } from './../../models/mcq-question-answer/mcqquestionanswer.paginated.item';
 import { DropDownModel } from './../../models/common/drop-down.model';
 import { ResponseModel } from 'src/app/models/common/response.model';
 import { MCQQuestionAnswerModel } from './../../models/mcq-question-answer/mcq-question-answer.model';
@@ -20,11 +20,16 @@ export class McqQuestionAnswerService {
       (environment.apiUrl + 'MCQQuestionAnswer/getAll');
   }
  
-  saveMCQQuestionAnswer(vm: MCQQuestionAnswerModel): Observable<ResponseModel> {
+  saveMCQQuestionAnswer(mcqquestionanswer: MCQQuestionAnswerModel): Observable<ResponseModel> {
     return this.httpClient.
       post<ResponseModel>
-      (environment.apiUrl + 'MCQQuestionAnswer', vm);
+      (environment.apiUrl + 'MCQQuestionAnswer', mcqquestionanswer);
   }
+
+  /* saveEssayQuestionAnswer(essayanswer: EssayQuestionAnswerModel): Observable<ResponseModel> {
+    return this.httpClient.
+    post<ResponseModel>(environment.apiUrl + 'EssayQuestionAnswer', essayanswer);
+      } */
 
   getAllQuestions():Observable<DropDownModel[]>{
     return this.httpClient.

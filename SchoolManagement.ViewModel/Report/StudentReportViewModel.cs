@@ -8,7 +8,7 @@ namespace SchoolManagement.ViewModel.Report
 {
     public class StudentReportViewModel
     {
-        //public int StudentId { get; set; }
+        public int StudentId { get; set; }
         public string StudentName { get; set; }
         public string TeacherComments { get; set; }
         public decimal Marks { get; set; }
