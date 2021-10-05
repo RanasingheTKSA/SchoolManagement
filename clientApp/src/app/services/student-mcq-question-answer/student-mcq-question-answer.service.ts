@@ -54,19 +54,41 @@ export class StudentMcqQuestionAnswerService {
     });
   }
 
-  getStudents(): Observable<StudentMcqQuestionAnswerModel[]>{
+   /* getStudents(): Observable<StudentMcqQuestionAnswerModel[]>{
     return this.httpClient.
       get<StudentMcqQuestionAnswerModel[]>
       (environment.apiUrl + 'StudentMCQQuestion/getStudents');
-  }
+    } */ 
 
+    /* report(vm: StudentMcqQuestionAnswerModel): Observable<ResponseModel> {
+      return this.httpClient.
+        post<ResponseModel>
+        (environment.apiUrl + 'StudentMCQQuestion', vm);
+    }
+ */
   /* report(id: number): Observable <ResponseModel> { 
     return this.httpClient. 
     report<ResponseModel>(environment.apiUrl + 'StudentMCQQuestion/report' + id); 
   } */
-  
-  report() {
-    return this.httpClient.get(`${environment.apiUrl} + StudentMCQQuestion/report`, {});
-}
+
+
+/* getStudents(apiUrl) {
+  var headers = {};
+  headers.Authorization = 'Bearer ' + sessionStorage.tokenKey;
+  var deferred = $q.defer();
+  $http.get(
+      hostApiUrl + apiUrl,
+      {
+          responseType: 'arraybuffer',
+          headers: headers
+      })
+  .success(function (result, status, headers) {
+      deferred.resolve(result);;
+  })
+   .error(function (data, status) {
+       console.log("Request failed with status: " + status);
+   });
+  return deferred.promise;
+} */
 
 }

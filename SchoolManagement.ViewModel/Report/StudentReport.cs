@@ -76,11 +76,11 @@ namespace SchoolManagement.ViewModel.Report
         {
             #region Table header
             _fontStyle = FontFactory.GetFont("TimesNewRoman", 10f, 1);
-            _pdfPCell = new PdfPCell(new Phrase("QUESTION ID", _fontStyle));
-            _pdfPCell.HorizontalAlignment = Element.ALIGN_CENTER;
-            _pdfPCell.VerticalAlignment = Element.ALIGN_MIDDLE;
-            _pdfPCell.BackgroundColor = BaseColor.LIGHT_GRAY;
-            _pdfPTable.AddCell(_pdfPCell);
+            //_pdfPCell = new PdfPCell(new Phrase("QUESTION ID", _fontStyle));
+            //_pdfPCell.HorizontalAlignment = Element.ALIGN_CENTER;
+            //_pdfPCell.VerticalAlignment = Element.ALIGN_MIDDLE;
+            //_pdfPCell.BackgroundColor = BaseColor.LIGHT_GRAY;
+            //_pdfPTable.AddCell(_pdfPCell);
 
            
             _pdfPCell = new PdfPCell(new Phrase("STUDENT NAME", _fontStyle));
@@ -107,11 +107,11 @@ namespace SchoolManagement.ViewModel.Report
             _fontStyle = FontFactory.GetFont("TimesNewRoman", 10f, 0);
             foreach (StudentReportViewModel vm in _students)
             {
-                _pdfPCell = new PdfPCell(new Phrase(vm.StudentId.ToString(), _fontStyle));
-                _pdfPCell.HorizontalAlignment = Element.ALIGN_CENTER;
-                _pdfPCell.VerticalAlignment = Element.ALIGN_MIDDLE;
+               // _pdfPCell = new PdfPCell(new Phrase(vm.StudentId.ToString(), _fontStyle));
+               // _pdfPCell.HorizontalAlignment = Element.ALIGN_CENTER;
+               //  _pdfPCell.VerticalAlignment = Element.ALIGN_MIDDLE;
                // _pdfPCell.BackgroundColor = BaseColor.LIGHT_GRAY;
-                _pdfPTable.AddCell(_pdfPCell);
+               // _pdfPTable.AddCell(_pdfPCell);
 
                 _pdfPCell = new PdfPCell(new Phrase(vm.StudentName, _fontStyle));
                 _pdfPCell.HorizontalAlignment = Element.ALIGN_CENTER;

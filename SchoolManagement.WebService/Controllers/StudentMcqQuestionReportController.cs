@@ -38,7 +38,7 @@ namespace SchoolManagement.WebService.Controllers
             {
                 StudentReportViewModel vm = new StudentReportViewModel()
                 {
-                    StudentId = studentReportViewModel.StudentId,
+                    //StudentId = studentReportViewModel.StudentId,
                     StudentName =studentReportViewModel.Student.User.FullName,
                     TeacherComments = studentReportViewModel.TeacherComments,
                     Marks = studentReportViewModel.Marks

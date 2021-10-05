@@ -25,6 +25,9 @@ export class StudentMcqQuestionListComponent implements OnInit {
   loadingIndicator = false;
   reorderable = true;
   StudentMCQQuestionForm: FormGroup;
+
+  //ReportForm : FormGroup;
+
   studentMcqQuestionFilterForm:FormGroup;
   questionNames :DropDownModel[] = [];
   studentNames :DropDownModel[] = [];
@@ -49,8 +52,8 @@ g
     this.getAllQuestions();
     this.getAllStudentNames();
     this.getAllStudentAnswerTexts();
-    this.getStudents();
-    this.report();
+    //this.getStudents();
+    //this.reportSave();
 
     this.studentMcqQuestionFilterForm = this.createStudentNameFilterForm();
   }
@@ -183,6 +186,29 @@ g
   }
 
 
+
+  //report from
+  /* clickReport(content)
+  {
+    this.ReportForm = this.fb.group({
+      //studentId:[null, [Validators.required]],
+      studentName:[null, [Validators.required]],
+      teacherComments:['', [Validators.required]],
+      marks:['', [Validators.required]],
+    });
+
+    this.modalService.open(content, {
+      ariaLabelledBy: 'modal-basic-title',
+      size: 'lg',
+    });
+  } */
+
+
+
+
+
+
+
   //save Question button 
   saveStudentMCQQuestion()
   {
@@ -226,7 +252,7 @@ g
 
 
 
-  getStudents(){
+  /* getStudents(){
     this.loadingIndicator = true;
     this.StudentMcqQuestionAnswerService.getStudents().subscribe(response => {
       this.data=response;
@@ -236,33 +262,46 @@ g
       this.loadingIndicator = false;
       this.toastr.error("Get student report method is not working!, Please try again", "Error")
     })
-   }
+  }  */ 
+
+
 
   //download report method
-  report() {
-    Swal.fire({
-         title: 'Are you sure want to Download MCQ Report?',
-         showCancelButton: true,
-         confirmButtonColor: 'red',
-         cancelButtonColor: 'green',
-         confirmButtonText: 'Yes',
-       }).then((result) => {
-         if (result.value) {
-           this.StudentMcqQuestionAnswerService.report().subscribe(response=>{
+  /* reportSave() {
+    console.log(this.ReportForm.value);
+    this.StudentMcqQuestionAnswerService.report(this.ReportForm.value)
+      .subscribe(response=>{
+        if(response.isSuccess)
+        {
+            this.modalService.dismissAll();
+            this.toastr.success(response.message,"Success");
+            //this.getStudents();
+        }
+      },error=>{
 
-             if(response.isSuccess){
-               this.toastr.success(response.message,"Success");
-               this.getStudents();
-             }
-             else{
-               this.toastr.error(response.message,"Error");
-             }
-     
-         },error=>{
-             this.toastr.error("Network error has been occured. Please try again.","Error");
-           }); 
-         }
-       });
-   }
+            this.toastr.error("ado report eke save eka","Error");
+      });
+   }  */
+
+   
+
+   /* getStudents() {
+    var downloadedData = StudentMcqQuestionAnswerService.getStudents().subscribe(response =>{
+    downloadedData.then(function (result) {
+        var file = new Blob([result], { type: 'application/pdf;base64' });
+        var fileURL = window.URL.createObjectURL(file);
+        var seconds = new Date().getTime() / 1000;
+        //var fileName = "cert" + parseInt(seconds) + ".pdf";
+        var a = document.createElement("a");
+        document.body.appendChild(a);
+        //a.style = "display: none";
+        a.href = fileURL;
+        //a.download = fileName;
+        a.click();
+    });
+  })
+}  */
+
+
 
 }
