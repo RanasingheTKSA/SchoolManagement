@@ -1,3 +1,4 @@
+import { HttpResponse } from '@angular/common/http';
 import { BasicStudentMCQQuestionAnswerModel } from './../../../models/student-mcq-question-answer/basic.studentmcqquestionanswer.model';
 import { DropDownModel } from './../../../models/common/drop-down.model';
 import { StudentMcqQuestionAnswerModel } from './../../../models/student-mcq-question-answer/student-mcq-question-answer';
@@ -224,7 +225,18 @@ g
 
 
 
+//file Grnarate method
+generateReport()
+{
+  this.spinner.show();
 
+  this.StudentMcqQuestionAnswerService.downloadStudentListReport().subscribe((response:HttpResponse<Blob>)=>{
+    
+  },error=>{
+      this.spinner.hide();
+      
+  });
+}
 
 
 

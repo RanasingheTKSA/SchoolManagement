@@ -68,14 +68,19 @@
                             <div class="ngxTableHeader">
                               <div class="header-buttons-left">
                                 <div class="icon-button-dleftemo buttons">
-                                  <button class="btn btn-icon icon-left btn-primary rounded-button" (click)='createStudentMCQQuestion(addEditRecord)' >
-                                  <i class="material-icons">add</i>
+                                  <button 
+                                    class="btn btn-icon icon-left btn-primary rounded-button" 
+                                    (click)='createStudentMCQQuestion(addEditRecord)' >
+                                    <i class="material-icons">add</i>
                                   </button>
 
-                                  <button 
-                                    class="btn btn-icon icon-left btn-success ms-3" 
+                                  <button
+                                    class="btn btn-icon icon-left btn-success ms-3"
+                                    style="margin-top: 0px"
+                                    type="button"
+                                    (click)="generateReport()"
                                     >
-                                    <i class="far fa-download"> DOWNLOAD REPORTS </i>
+                                      Generate Report
                                   </button> 
 
                                 </div>
@@ -91,6 +96,22 @@
                     
                       </div>
                     </form>
+
+                    <!-- <div class="row">
+                      <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                          <label for="date"></label>
+                          <button
+                            class="btn btn-icon icon-left btn-success ms-3"
+                            style="margin-top: 30px"
+                            type="button"
+                            
+                          >
+                            Generate Report
+                          </button>
+                        </div>
+                      </div>
+                    </div> -->
 
                 </div>
               </div>
