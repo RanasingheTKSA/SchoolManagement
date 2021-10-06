@@ -45,8 +45,7 @@ export class QuestionListComponent implements OnInit {
     ngOnInit(): void {
       //this.getAll();
       this.getAllTopic();
-      this.questionFilterForm = this.createQuestionFilterForm();
-      
+      this.questionFilterForm = this.createQuestionFilterForm();      
       this.getAllLessonName();
     
     }
@@ -194,7 +193,7 @@ export class QuestionListComponent implements OnInit {
           lessonId:new FormControl(0),
         });
       }
-       //getters
+    //getters
     get lessonFilterId(){
       return this.questionFilterForm.get("lessonId").value
     }
@@ -202,7 +201,7 @@ export class QuestionListComponent implements OnInit {
     get searchTextFilterId() {
       return this.questionFilterForm.get("searchText").value;
     } 
-      //save Question button 
+    //save Question button 
     saveQuestion()
       {
         console.log(this.questionForm.value);
