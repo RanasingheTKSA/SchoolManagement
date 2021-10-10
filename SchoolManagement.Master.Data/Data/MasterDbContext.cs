@@ -23,7 +23,8 @@ namespace SchoolManagement.Master.Data.Data
         {
             if (!optionsBuilder.IsConfigured)
             {     
-                optionsBuilder.UseSqlServer(@"Server=itp-2021.database.windows.net;Database=SchoolMaster;User Id=itp;Password=Pass@1231qaz;");
+                //optionsBuilder.UseSqlServer(@"Server=itp-2021.database.windows.net;Database=SchoolMaster;User Id=itp;Password=Pass@1231qaz;");
+                optionsBuilder.UseSqlServer(@"Server=MSI\\SQLEXPRESS;Database=SchoolMaster;User Id=ra;Password=1qaz2wsx@;");
             }
         }
 
